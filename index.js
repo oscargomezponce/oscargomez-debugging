@@ -52,7 +52,8 @@ function checkGuess() {
     numberOfGuessesMessage.innerHTML = `You guessed ${guess}. <br> ${remainingAttempts} guesses remaining`;
   }
 
-  if (attempts ==== maxNumberOfAttempts) {
+  /* Oscar's comment: using 4 = is wrong*/
+  if (attempts === maxNumberOfAttempts) {
     submitButton.disabled = true;
     guessInput.disabled = true;
   }
@@ -68,7 +69,8 @@ function hideAllMessages() {
   }
 }
 
-funtion setup() {
+  /* Oscar's comment: "function" was mispelled */
+function setup() {
   // Get random number
   targetNumber = getRandomNumber(1, 100);
   console.log(`target number: ${targetNumber}`);
@@ -77,7 +79,7 @@ funtion setup() {
   maxNumberOfAttempts = 0;
 
   // Enable the input and submit button
-  submitButton.disabeld = false;
+  submitButton.disabled = false; /* Oscar's comment: "disabled" was mispelled */
   guessInput.disabled = false;
 
   hideAllMessages();
@@ -87,4 +89,4 @@ funtion setup() {
 submitButton.addEventListener('click', checkGuess);
 resetButton.addEventListener('click', setup);
 
-setup();
+resetButton.style.display = 'none'; /* Oscar's comment: should hide reset button at start */
